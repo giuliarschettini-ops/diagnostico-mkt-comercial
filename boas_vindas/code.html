@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sovereign Consultant - Diagnóstico Comercial Inteligente</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#90a8ff",
+                    "inverse-primary": "#b6c4ff",
+                    "on-background": "#0d1c2f",
+                    "on-secondary-container": "#54647a",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "inverse-on-surface": "#ebf1ff",
+                    "inverse-surface": "#233144",
+                    "surface-container": "#e6eeff",
+                    "surface-container-highest": "#d5e3fd",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#004a31",
+                    "tertiary": "#00311f",
+                    "on-surface-variant": "#444651",
+                    "on-tertiary-fixed": "#002113",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#1e3a8a",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "secondary-container": "#d0e1fb",
+                    "surface-dim": "#ccdbf4",
+                    "tertiary-fixed": "#6ffbbe",
+                    "primary-fixed": "#dce1ff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#00164e",
+                    "secondary": "#505f76",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-primary": "#ffffff",
+                    "outline": "#757682",
+                    "surface": "#f8f9ff",
+                    "background": "#f8f9ff",
+                    "on-tertiary-container": "#27c38a",
+                    "secondary-fixed": "#d3e4fe",
+                    "primary": "#00236f",
+                    "surface-bright": "#f8f9ff",
+                    "on-surface": "#0d1c2f",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#dde9ff",
+                    "surface-tint": "#4059aa",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "outline-variant": "#c5c5d3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#264191",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "surface-variant": "#d5e3fd",
+                    "surface-container-low": "#eff4ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(248, 249, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tight text-blue-950 dark:text-blue-50">
+                Sovereign Consultant
+            </div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-blue-900 dark:text-blue-400" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center relative overflow-hidden">
+<!-- Background Abstract Elements -->
+<div class="absolute inset-0 z-0 opacity-40 pointer-events-none">
+<div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-surface-container-high blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-secondary-container blur-[100px]"></div>
+</div>
+<!-- Hero Section -->
+<div class="relative z-10 w-full max-w-7xl px-6 py-12 md:py-24 grid md:grid-cols-12 gap-12 items-center">
+<!-- Left Editorial Context (Asymmetrical Margin) -->
+<div class="md:col-span-5 flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-container/10 text-on-tertiary-container w-fit">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified">verified</span>
+<span class="text-xs font-semibold uppercase tracking-wider">Institutional Grade Analysis</span>
+</div>
+<h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-primary leading-[1.1]">
+                    Diagnóstico Comercial Inteligente
+                </h1>
+<p class="text-lg md:text-xl text-on-secondary-container leading-relaxed max-w-md">
+                    Analise sua operação e receba um plano de ação personalizado baseado em métricas reais do mercado.
+                </p>
+<div class="hidden md:flex flex-col gap-8 mt-4">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Data-Driven Insights</h4>
+<p class="text-sm text-on-secondary-container">Decisões baseadas em dados consolidados de performance.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Growth Mapping</h4>
+<p class="text-sm text-on-secondary-container">Identificação clara de gargalos na jornada do cliente.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Form Section (Focused Diagnostic Area) -->
+<div class="md:col-span-7 flex justify-center">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-xl shadow-[0px_20px_40px_rgba(13,28,47,0.06)] p-8 md:p-10 border border-outline-variant/15">
+<div class="mb-8">
+<h2 class="text-2xl font-bold text-primary mb-2">Boas-vindas</h2>
+<p class="text-sm text-on-secondary-container">Preencha os dados abaixo para iniciar sua jornada de transformação.</p>
+</div>
+<form class="flex flex-col gap-8">
+<!-- Name Field -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Nome da empresa</label>
+<input class="w-full h-14 px-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-surface-tint focus:bg-surface-container-lowest transition-all placeholder:text-outline-variant text-on-surface" placeholder="Ex: Sovereign Industries" type="text"/>
+</div>
+<!-- Responsible Field -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Nome do responsável</label>
+<input class="w-full h-14 px-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-surface-tint focus:bg-surface-container-lowest transition-all placeholder:text-outline-variant text-on-surface" placeholder="Seu nome completo" type="text"/>
+</div>
+<!-- Segment Field -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Segmento de atuação</label>
+<div class="relative">
+<select class="w-full h-14 px-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-surface-tint focus:bg-surface-container-lowest appearance-none transition-all text-on-surface">
+<option disabled="" selected="" value="">Selecione um setor</option>
+<option value="tecnologia">Tecnologia &amp; Software</option>
+<option value="varejo">Varejo &amp; E-commerce</option>
+<option value="servicos">Serviços Profissionais</option>
+<option value="industria">Indústria &amp; Manufatura</option>
+<option value="saude">Saúde &amp; Bem-estar</option>
+</select>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-secondary-container">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="mt-4 w-full h-16 bg-gradient-to-r from-primary to-primary-container text-on-primary text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3" type="submit">
+<span>Iniciar diagnóstico</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center text-[10px] text-outline uppercase tracking-widest font-bold">Tempo estimado: 5 minutos</p>
+</form>
+</div>
+</div>
+</div>
+<!-- Secondary Content Area / Social Proof -->
+<div class="w-full bg-surface-container-low/50 py-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<img class="h-8 object-contain mx-auto" data-alt="corporate partner logo minimalist monochrome design professional services" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcU3dGrot1_dmenKsf4cdQEPo7dqOCFJsdLFnAyFB0gUpQzK8zz3gNa3OhEXf55oDMyxtrkfUSCXMeSJpN-mu0GdswkP_uaOztFoosWA9-Z-9b11jgoklonM3gp427iucvlVaery4JYvFgC8R1DtCIqMjEqpsmsbJ0yBE35Hb72Nu9rGQYqRIKQYOcqj30ucfvCevV4TEtER0TUJ8D_PHMKLu_KVBRs-UJrHI8VvUpyS4lpvXq3MPCI5z7V1QnySgidJV02KE9TFuQ"/>
+<img class="h-8 object-contain mx-auto" data-alt="tech company partner logo simple line art design institutional style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwNp_7kMRM6Jda0-uHvrB-TyJYOasqVbeVUyzhpYC3TmwBcMDBcnHr1tgg4W2UXdUluW59cS_hzezLv_oyeXrhb_0oIprCCtg6zyN7WvwB1XpcuUFpsf7VCWlDE63LE4fpYGeJWeI44H11dV7VGwVYYdmW9cd-jJJnFYAH-ocIFZLg0--uXwvjIgdjyTiZ5F8OI0is4OwtC7pQVf0wFOqgVisHfGlVskYMCR03i4US3B3gbBJ1eKyv5aB87ZmlRNSKlBHRNrYaHaoz"/>
+<img class="h-8 object-contain mx-auto" data-alt="financial services partner logo elegant typography design white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8avt8114pK6eWA24y7NrWHBOAMwj7jphgh5Y1YIeUbT6ZEARmR46m_Q-NbD29Np6LFm0Dm5N15Yi_8v-8Jsc7AyxtbXveLvufBlqNAXvtW-_l_1dr1i_RSE0-qxqNIFuzSJ6xEMFC9dESvvFyqvTJaHxWHu1G8uFsgTPDlwakOGAI7zH8deGghFi8GXsIA587i8r594KtsgAU8IfiNmTzto4qcEPa6Y6ys-Oo2WWREwnfwc5orQZOmgCYyvctQEPJIsZfnFN-QUcN"/>
+<img class="h-8 object-contain mx-auto" data-alt="consultancy firm logo modern abstract emblem professional corporate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkvYn3SCPYZsUwr0ouwvyRgcEgXyFvbtwVVJNtdIcqt2Cy8WDDNEOjGe9OLXQ39XRyXA6_BhCF9gInGFod9YfieszDwD7UnRYqiqW5JFDTtzUv15rOcHTWvox3ofUslYmp_09IgrXHdMvXjrGoaJClHLFLNMFi0eWf13md2Rx_X-ZzGRt4DznUOZ0vj6lTxGou_ZlF29Pqqdg4EsN-sPy-geaFuLuM3cRFIzndnuBGepd6BUlty-5UUDdbNTShtsCkZH7nJF8yAIYq"/>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer (No-Line Principle) -->
+<footer class="bg-surface py-12 border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-2 text-center md:text-left">
+<p class="text-sm font-bold text-primary">Sovereign Consultant</p>
+<p class="text-xs text-on-secondary-container">© 2024 Institutional Grade Diagnostic Framework.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-xs font-medium text-on-secondary-container hover:text-primary transition-colors" href="#">Termos de Uso</a>
+<a class="text-xs font-medium text-on-secondary-container hover:text-primary transition-colors" href="#">Privacidade</a>
+<a class="text-xs font-medium text-on-secondary-container hover:text-primary transition-colors" href="#">Suporte</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sovereign Consultant - Diagnostic Step 3</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#90a8ff",
+                    "inverse-primary": "#b6c4ff",
+                    "on-background": "#0d1c2f",
+                    "on-secondary-container": "#54647a",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "inverse-on-surface": "#ebf1ff",
+                    "inverse-surface": "#233144",
+                    "surface-container": "#e6eeff",
+                    "surface-container-highest": "#d5e3fd",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#004a31",
+                    "tertiary": "#00311f",
+                    "on-surface-variant": "#444651",
+                    "on-tertiary-fixed": "#002113",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#1e3a8a",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "secondary-container": "#d0e1fb",
+                    "surface-dim": "#ccdbf4",
+                    "tertiary-fixed": "#6ffbbe",
+                    "primary-fixed": "#dce1ff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#00164e",
+                    "secondary": "#505f76",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-primary": "#ffffff",
+                    "outline": "#757682",
+                    "surface": "#f8f9ff",
+                    "background": "#f8f9ff",
+                    "on-tertiary-container": "#27c38a",
+                    "secondary-fixed": "#d3e4fe",
+                    "primary": "#00236f",
+                    "surface-bright": "#f8f9ff",
+                    "on-surface": "#0d1c2f",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#dde9ff",
+                    "surface-tint": "#4059aa",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "outline-variant": "#c5c5d3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#264191",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "surface-variant": "#d5e3fd",
+                    "surface-container-low": "#eff4ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            background: rgba(248, 249, 255, 0.8);
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tight text-blue-950 dark:text-blue-50">
+                Sovereign Consultant
+            </div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-blue-900 dark:text-blue-400 cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="flex min-h-[calc(100vh-72px)]">
+<!-- SideNavBar - Suppressed for task-focused journey as per mandate -->
+<!-- Content Canvas -->
+<div class="flex-1 max-w-4xl mx-auto px-6 py-12">
+<!-- Progress Indicator -->
+<div class="mb-12">
+<div class="flex justify-between items-end mb-2">
+<span class="text-label font-semibold text-primary tracking-tight">PROGRESSO DA ANÁLISE</span>
+<span class="text-headline-lg font-extrabold text-primary">75%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Header Section (Asymmetrical Editorial Style) -->
+<div class="mb-16 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<div class="md:col-span-8">
+<h1 class="text-5xl md:text-6xl font-extrabold text-on-surface leading-tight tracking-tight mb-4">
+                        Bloco 3: <span class="text-primary-container">Gestão e Dados</span>
+</h1>
+<p class="text-lg text-on-secondary-container max-w-xl">
+                        A maturidade institucional exige precisão. Transforme intuição em indicadores estratégicos para escalar sua operação com segurança.
+                    </p>
+</div>
+<div class="md:col-span-4 hidden md:block pt-4">
+<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-tertiary">
+<p class="text-sm font-medium text-on-surface-variant leading-relaxed">
+                            "Dados são o novo petróleo, mas o refinamento é o que cria a soberania de mercado."
+                        </p>
+</div>
+</div>
+</div>
+<!-- Quiz Container -->
+<form class="space-y-12">
+<!-- Question 1: Radio -->
+<section class="p-8 bg-surface-container-lowest rounded-xl">
+<label class="block text-xl font-semibold text-on-surface mb-6 leading-snug">
+                        Você tem metas mensais definidas?
+                    </label>
+<div class="flex flex-wrap gap-4">
+<label class="flex-1 min-w-[140px] cursor-pointer group">
+<input class="hidden peer" name="metas" type="radio"/>
+<div class="p-4 rounded-lg bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" data-icon="check_circle">check_circle</span>
+<span class="font-medium text-on-surface">Sim</span>
+</div>
+</label>
+<label class="flex-1 min-w-[140px] cursor-pointer group">
+<input class="hidden peer" name="metas" type="radio"/>
+<div class="p-4 rounded-lg bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:scale-110 transition-transform" data-icon="cancel">cancel</span>
+<span class="font-medium text-on-surface">Não</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Question 2: Select -->
+<section class="p-8 bg-surface-container-low rounded-xl">
+<label class="block text-xl font-semibold text-on-surface mb-6 leading-snug">
+                        Você acompanha os resultados semanalmente?
+                    </label>
+<div class="relative max-w-md">
+<select class="w-full appearance-none bg-surface-container-lowest border-none rounded-lg p-4 pr-12 text-on-surface font-medium focus:ring-2 focus:ring-primary shadow-sm">
+<option disabled="" selected="" value="">Selecione uma opção</option>
+<option>Sim</option>
+<option>Não</option>
+<option>Às vezes</option>
+</select>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+<span class="material-symbols-outlined text-primary" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Style for yes/no cluster -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Question 3 -->
+<div class="p-8 bg-surface-container-highest rounded-xl flex flex-col justify-between">
+<label class="block text-lg font-semibold text-on-surface mb-6 leading-tight">
+                            Você sabe seu MRR ou faturamento recorrente?
+                        </label>
+<div class="flex gap-3">
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest text-on-surface font-semibold hover:bg-primary hover:text-on-primary transition-all text-sm" type="button">SIM</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest text-on-surface font-semibold hover:bg-primary hover:text-on-primary transition-all text-sm" type="button">NÃO</button>
+</div>
+</div>
+<!-- Question 4 -->
+<div class="p-8 bg-surface-container-highest rounded-xl flex flex-col justify-between">
+<label class="block text-lg font-semibold text-on-surface mb-6 leading-tight">
+                            Você conhece seu churn (cancelamentos)?
+                        </label>
+<div class="flex gap-3">
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest text-on-surface font-semibold hover:bg-primary hover:text-on-primary transition-all text-sm" type="button">SIM</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest text-on-surface font-semibold hover:bg-primary hover:text-on-primary transition-all text-sm" type="button">NÃO</button>
+</div>
+</div>
+</div>
+<!-- Question 5: Image/Card Choice Mix -->
+<section class="p-8 bg-surface-container-low rounded-xl">
+<label class="block text-xl font-semibold text-on-surface mb-8 leading-snug">
+                        Como você toma decisões comerciais hoje?
+                    </label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<label class="cursor-pointer">
+<input class="hidden peer" name="decisao" type="radio"/>
+<div class="h-full flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl border-2 border-transparent peer-checked:border-primary transition-all hover:shadow-md">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="psychology">psychology</span>
+<span class="font-bold text-on-surface">Intuição</span>
+<p class="text-xs text-on-secondary-container mt-2">Decisões baseadas no feeling e experiência.</p>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="decisao" type="radio"/>
+<div class="h-full flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl border-2 border-transparent peer-checked:border-primary transition-all hover:shadow-md">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="monitoring">monitoring</span>
+<span class="font-bold text-on-surface">Dados</span>
+<p class="text-xs text-on-secondary-container mt-2">Relatórios e dashboards guiam o caminho.</p>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="decisao" type="radio"/>
+<div class="h-full flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl border-2 border-transparent peer-checked:border-primary transition-all hover:shadow-md">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="balance">balance</span>
+<span class="font-bold text-on-surface">Misto</span>
+<p class="text-xs text-on-secondary-container mt-2">Equilíbrio entre técnica e visão humana.</p>
+</div>
+</label>
+</div>
+</section>
+<!-- Navigation Buttons -->
+<div class="flex items-center justify-between pt-8 border-t border-outline-variant/15">
+<button class="flex items-center gap-2 px-8 py-4 text-on-surface font-semibold hover:bg-surface-container-high rounded-xl transition-all" type="button">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+                        Voltar
+                    </button>
+<button class="flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-xl shadow-xl hover:scale-105 active:scale-95 transition-all" type="submit">
+                        Próximo
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Decorative Image Anchor -->
+<div class="mt-24 rounded-2xl overflow-hidden h-64 relative">
+<img alt="Data analytics visualization" class="w-full h-full object-cover grayscale opacity-20 contrast-125" data-alt="Modern business dashboard displayed on a high-resolution screen with clean blue and teal data charts in a minimalist corporate office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOHvQUIXxnmQeW_vWPMOUBBMWu6SvChAZaYJpdwpkrSvO3h90O2hCBvRgn3HGwTRYXWk0M1kBW_5EJO_zCZc-M3Nr79bt_Fp6jdwTAEmHrDEcD5tPgJldTyasd5bYMQlTFFwc3iqiWJjrntl4QjE1hTpXAD_N56WeXITH4awABcq22ckWTNrgjfiZqjrNmj-nRLWM2m5E2TC1TVokskLOManbl_HJmxJXo4UC8M6xfcPVMPhk_Doz622yRzI0cKgyqZiqU0cPHrxZ-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB Suppression: Hide FAB as per mandate for task-focused screens -->
+</body></html>

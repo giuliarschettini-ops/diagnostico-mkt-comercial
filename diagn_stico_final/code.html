@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+        h1, h2, h3, .headline-font {
+            font-family: 'Manrope', sans-serif;
+        }
+        .tonal-gradient {
+            background: linear-gradient(135deg, #00236f 0%, #1e3a8a 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#90a8ff",
+                      "inverse-primary": "#b6c4ff",
+                      "on-background": "#0d1c2f",
+                      "on-secondary-container": "#54647a",
+                      "on-secondary-fixed-variant": "#38485d",
+                      "inverse-on-surface": "#ebf1ff",
+                      "inverse-surface": "#233144",
+                      "surface-container": "#e6eeff",
+                      "surface-container-highest": "#d5e3fd",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#004a31",
+                      "tertiary": "#00311f",
+                      "on-surface-variant": "#444651",
+                      "on-tertiary-fixed": "#002113",
+                      "on-tertiary": "#ffffff",
+                      "primary-container": "#1e3a8a",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "secondary-container": "#d0e1fb",
+                      "surface-dim": "#ccdbf4",
+                      "tertiary-fixed": "#6ffbbe",
+                      "primary-fixed": "#dce1ff",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#00164e",
+                      "secondary": "#505f76",
+                      "on-secondary-fixed": "#0b1c30",
+                      "on-primary": "#ffffff",
+                      "outline": "#757682",
+                      "surface": "#f8f9ff",
+                      "background": "#f8f9ff",
+                      "on-tertiary-container": "#27c38a",
+                      "secondary-fixed": "#d3e4fe",
+                      "primary": "#00236f",
+                      "surface-bright": "#f8f9ff",
+                      "on-surface": "#0d1c2f",
+                      "error-container": "#ffdad6",
+                      "on-secondary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-container-high": "#dde9ff",
+                      "surface-tint": "#4059aa",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "secondary-fixed-dim": "#b7c8e1",
+                      "outline-variant": "#c5c5d3",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#264191",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "surface-variant": "#d5e3fd",
+                      "surface-container-low": "#eff4ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "1rem",
+                      "xl": "1.5rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          }
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tight text-blue-950 dark:text-blue-50">
+                Sovereign Consultant
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-blue-900 dark:text-blue-300 font-semibold transition-colors" href="#">Diagnostic</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 transition-colors" href="#">Insights</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 transition-colors" href="#">Benchmarks</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 transition-colors" href="#">History</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-secondary-container">account_circle</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-12">
+<!-- Header Editorial -->
+<div class="mb-16">
+<span class="text-on-secondary-container font-label uppercase tracking-widest text-xs font-bold block mb-4">Relatório Institucional</span>
+<h1 class="text-5xl font-extrabold tracking-tight text-primary leading-tight max-w-3xl">Diagnóstico Final: Maturidade Operacional</h1>
+<p class="mt-4 text-on-secondary-container text-lg max-w-2xl">Uma análise técnica das eficiências e vulnerabilidades estruturais da Sovereign Consultant.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Score & Summary -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Operations Score Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col items-center text-center">
+<h3 class="text-label-md font-bold text-on-secondary-container mb-6">Operations Score</h3>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-high" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-tertiary-fixed-dim" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-dasharray="552.92" stroke-dashoffset="138.23" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-5xl font-black text-primary">75</span>
+<span class="text-xs font-bold text-on-secondary-container tracking-tighter uppercase">Excelente</span>
+</div>
+</div>
+<p class="mt-6 text-sm text-on-secondary-container leading-relaxed">
+                        Sua operação está 15% acima da média do setor. Existem vulnerabilidades específicas em processos de escala que precisam de atenção imediata.
+                    </p>
+</div>
+<!-- Executive Summary -->
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h3 class="text-xl font-bold text-primary mb-4 headline-font">Resumo Executivo</h3>
+<div class="space-y-4">
+<p class="text-on-surface leading-relaxed text-sm">
+                            A estrutura atual demonstra forte coesão em entregas técnicas, mas apresenta fricção significativa na transição entre vendas e onboarding. 
+                        </p>
+<p class="text-on-surface leading-relaxed text-sm">
+                            Identificamos que 22% do tempo produtivo é consumido por tarefas manuais que poderiam ser automatizadas com integração de sistemas legados.
+                        </p>
+</div>
+<button class="mt-8 flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Download PDF Completo
+                    </button>
+</div>
+</div>
+<!-- Right Column: Bottlenecks, Quick Wins, Priorities -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Main Content Bento-ish Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Principais Gargalos -->
+<section class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-error/40">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-error" data-weight="fill">warning</span>
+<h3 class="text-xl font-bold text-primary headline-font">Principais Gargalos</h3>
+</div>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="text-error font-bold text-lg leading-none">!</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Onboarding Manual</h4>
+<p class="text-xs text-on-secondary-container">O tempo médio de ativação de novos clientes excede o benchmark em 4.5 dias devido à coleta manual de dados.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="text-error font-bold text-lg leading-none">!</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Silos de Informação</h4>
+<p class="text-xs text-on-secondary-container">Dados financeiros e operacionais não se comunicam, gerando 12h de retrabalho semanal em reports.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="text-error font-bold text-lg leading-none">!</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Dependência de Key-People</h4>
+<p class="text-xs text-on-secondary-container">Processos críticos não documentados dependem exclusivamente do gestor sênior de operações.</p>
+</div>
+</li>
+</ul>
+</section>
+<!-- Quick Wins -->
+<section class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-tertiary-fixed-dim/40">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-on-tertiary-container" data-weight="fill">bolt</span>
+<h3 class="text-xl font-bold text-primary headline-font">Oportunidades Rápidas</h3>
+</div>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-on-tertiary-container text-lg">check_circle</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Automação de Reports</h4>
+<p class="text-xs text-on-secondary-container">Implementação de dashboard em tempo real para eliminar planilhas manuais de controle.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-on-tertiary-container text-lg">check_circle</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Padronização de Briefing</h4>
+<p class="text-xs text-on-secondary-container">Uso de formulários dinâmicos para reduzir tempo de onboarding em até 40%.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-on-tertiary-container text-lg">check_circle</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Centralização CRM</h4>
+<p class="text-xs text-on-secondary-container">Mapeamento de jornada única do cliente para evitar duplicidade de contatos.</p>
+</div>
+</li>
+</ul>
+</section>
+</div>
+<!-- Recommended Priorities Section -->
+<section class="bg-primary text-on-primary p-10 rounded-xl tonal-gradient shadow-xl">
+<h3 class="text-2xl font-bold mb-8 headline-font">Prioridades Recomendadas por Impacto</h3>
+<div class="space-y-8">
+<div class="flex gap-6 items-start">
+<span class="text-3xl font-black opacity-30">01</span>
+<div>
+<h4 class="text-lg font-bold mb-2">Estruturação de Processos (Playbooks)</h4>
+<p class="text-on-primary-container text-sm leading-relaxed">Documentar os top 5 processos que mais consomem tempo hoje. Impacto direto na escalabilidade e redução de turnover.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<span class="text-3xl font-black opacity-30">02</span>
+<div>
+<h4 class="text-lg font-bold mb-2">Integração da Pilha Tecnológica</h4>
+<p class="text-on-primary-container text-sm leading-relaxed">Conectar o ERP ao CRM via API para visibilidade financeira em tempo real sobre projetos ativos.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<span class="text-3xl font-black opacity-30">03</span>
+<div>
+<h4 class="text-lg font-bold mb-2">Redesenho do Onboarding</h4>
+<p class="text-on-primary-container text-sm leading-relaxed">Implementar uma trilha de sucesso do cliente automatizada nos primeiros 15 dias de contrato.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 bg-surface-container-high p-8 rounded-xl">
+<div class="max-w-md">
+<h3 class="text-xl font-bold text-primary headline-font mb-2">Pronto para o próximo nível?</h3>
+<p class="text-on-secondary-container text-sm">Nossos especialistas estão prontos para ajudar na implementação técnica destas prioridades.</p>
+</div>
+<a class="flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:scale-105 transition-transform" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.284l-.539 2.016 2.049-.545c.961.564 1.83.896 3.238.897 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.767-5.766zm3.385 8.163c-.145.411-.735.753-1.015.798-.27.045-.583.078-.97-.045a4.704 4.704 0 0 1-1.92-1.127 5.176 5.176 0 0 1-1.306-1.78c-.287-.565-.584-1.31-.584-1.99 0-.68.358-1.011.488-1.144.13-.133.286-.166.38-.166s.188.005.27.01c.086.005.201-.033.315.242.115.275.394 1.006.429 1.077s.058.151.01.247c-.048.096-.072.156-.145.242-.073.086-.153.192-.218.261s-.144.145-.062.286c.081.141.36.593.774.96.533.474.985.621 1.125.69.14.07.223.058.305-.037.083-.095.352-.411.446-.551.095-.14.188-.117.318-.069s.823.388.966.459c.142.07.237.104.272.165.035.061.035.353-.11.764z"></path></svg>
+                        Quero evoluir minha operação
+                    </a>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Shadow Element (Simulated) -->
+<div class="fixed bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-surface to-transparent pointer-events-none"></div>
+<!-- Mobile Navigation Shell (Literal implementation from SideNavBar JSON rules) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full bg-white dark:bg-slate-950 px-6 py-4 flex justify-between items-center shadow-2xl border-t border-outline-variant/10">
+<div class="flex flex-col items-center text-blue-900 dark:text-blue-300 font-bold">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Diagnostic</span>
+</div>
+<div class="flex flex-col items-center text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Insights</span>
+</div>
+<div class="flex flex-col items-center text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Benchmarks</span>
+</div>
+<div class="flex flex-col items-center text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">history</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">History</span>
+</div>
+</div>
+</body></html>

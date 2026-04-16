@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#90a8ff",
+                    "inverse-primary": "#b6c4ff",
+                    "on-background": "#0d1c2f",
+                    "on-secondary-container": "#54647a",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "inverse-on-surface": "#ebf1ff",
+                    "inverse-surface": "#233144",
+                    "surface-container": "#e6eeff",
+                    "surface-container-highest": "#d5e3fd",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#004a31",
+                    "tertiary": "#00311f",
+                    "on-surface-variant": "#444651",
+                    "on-tertiary-fixed": "#002113",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#1e3a8a",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "secondary-container": "#d0e1fb",
+                    "surface-dim": "#ccdbf4",
+                    "tertiary-fixed": "#6ffbbe",
+                    "primary-fixed": "#dce1ff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#00164e",
+                    "secondary": "#505f76",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-primary": "#ffffff",
+                    "outline": "#757682",
+                    "surface": "#f8f9ff",
+                    "background": "#f8f9ff",
+                    "on-tertiary-container": "#27c38a",
+                    "secondary-fixed": "#d3e4fe",
+                    "primary": "#00236f",
+                    "surface-bright": "#f8f9ff",
+                    "on-surface": "#0d1c2f",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#dde9ff",
+                    "surface-tint": "#4059aa",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "outline-variant": "#c5c5d3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#264191",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "surface-variant": "#d5e3fd",
+                    "surface-container-low": "#eff4ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col">
+<!-- Top Navigation Bar (Shared Component) -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="text-xl font-bold tracking-tight text-blue-950 dark:text-blue-50 font-headline">Sovereign Consultant</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-200 transition-colors font-headline font-medium" href="#">Diagnostic</a>
+<a class="text-blue-900 dark:text-blue-300 font-semibold font-headline" href="#">Insights</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-200 transition-colors font-headline font-medium" href="#">Benchmarks</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-200 transition-colors font-headline font-medium" href="#">History</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-5xl mx-auto px-6 py-12 md:py-20 relative">
+<!-- Background Decorative Element (Sovereign Style) -->
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<div class="absolute bottom-0 right-1/4 w-64 h-64 bg-tertiary-fixed-dim/10 rounded-full blur-3xl -z-10"></div>
+<!-- Section Header / Editorial Intent -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div class="max-w-xl">
+<span class="text-tertiary-fixed-variant font-semibold tracking-widest text-sm uppercase mb-3 block">Módulo Estratégico</span>
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface leading-tight">
+                    Bloco 2: Marketing e <br/><span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">Geração de Leads</span>
+</h1>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="text-label-md font-medium text-on-secondary-container">Progresso do Diagnóstico</span>
+<div class="w-48 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="w-1/2 h-full bg-tertiary-fixed-dim transition-all duration-500"></div>
+</div>
+<span class="text-sm font-bold text-on-surface">50% Completo</span>
+</div>
+</div>
+<!-- Focused Quiz Container -->
+<div class="space-y-24">
+<!-- Question 1: Multi-select Channels -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<div class="md:col-span-4">
+<h2 class="font-headline text-xl font-bold text-on-surface leading-snug">Quais canais você usa hoje?</h2>
+<p class="mt-2 text-on-secondary-container text-sm">Selecione todos os canais ativos na sua operação atual.</p>
+</div>
+<div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-3">
+<label class="group cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-surface-container-lowest transition-all hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-3xl mb-2 text-primary" data-icon="share">share</span>
+<span class="text-sm font-semibold">Instagram</span>
+</div>
+</label>
+<label class="group cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-surface-container-lowest transition-all hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-3xl mb-2 text-primary" data-icon="ads_click">ads_click</span>
+<span class="text-sm font-semibold">Google Ads</span>
+</div>
+</label>
+<label class="group cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-surface-container-lowest transition-all hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-3xl mb-2 text-primary" data-icon="group_add">group_add</span>
+<span class="text-sm font-semibold">Indicação</span>
+</div>
+</label>
+<label class="group cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-surface-container-lowest transition-all hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-3xl mb-2 text-primary" data-icon="language">language</span>
+<span class="text-sm font-semibold">Site</span>
+</div>
+</label>
+<label class="group cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-surface-container-lowest transition-all hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-3xl mb-2 text-primary" data-icon="chat">chat</span>
+<span class="text-sm font-semibold">WhatsApp</span>
+</div>
+</label>
+<label class="group cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-surface-container-lowest transition-all hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-3xl mb-2 text-primary" data-icon="more_horiz">more_horiz</span>
+<span class="text-sm font-semibold">Outro</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Question 2: Paid Media Investment -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low p-8 rounded-2xl">
+<div class="md:col-span-5">
+<h2 class="font-headline text-xl font-bold text-on-surface leading-snug">Você investe em mídia paga?</h2>
+<p class="mt-2 text-on-secondary-container text-sm">Tráfego pago no Facebook, Google, LinkedIn, etc.</p>
+</div>
+<div class="md:col-span-7 space-y-6">
+<div class="flex gap-4">
+<label class="flex-1 cursor-pointer">
+<input checked="" class="hidden peer" name="paid_media" type="radio"/>
+<div class="flex items-center justify-center p-4 rounded-xl bg-surface-container-lowest border-2 border-transparent peer-checked:border-primary transition-all">
+<span class="font-bold">Sim</span>
+</div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="hidden peer" name="paid_media" type="radio"/>
+<div class="flex items-center justify-center p-4 rounded-xl bg-surface-container-lowest border-2 border-transparent peer-checked:border-primary transition-all">
+<span class="font-bold">Não</span>
+</div>
+</label>
+</div>
+<!-- Nested Question -->
+<div class="mt-4 space-y-2">
+<label class="text-label-md font-semibold text-on-surface">Quanto por mês?</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-secondary-container font-medium">R$</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-xl bg-surface-container-lowest border-none ring-0 focus:ring-2 focus:ring-primary/20 text-lg font-headline font-bold" placeholder="0,00" type="number"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Question 3: Lead Source (Asymmetric Layout Moment) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<div class="md:col-span-3 text-right md:text-left">
+<h2 class="font-headline text-xl font-bold text-on-surface">Origem de Leads</h2>
+</div>
+<div class="md:col-span-9">
+<label class="text-sm font-medium text-on-secondary-container mb-4 block">De onde vem a maioria dos seus leads?</label>
+<textarea class="w-full p-6 rounded-xl bg-surface-container-low border-none ring-0 focus:ring-2 focus:ring-primary/20 text-body-lg resize-none" placeholder="Descreva as fontes que mais convertem no seu negócio..." rows="4"></textarea>
+</div>
+</section>
+<!-- Question 4 & 5 Bento Row -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Question 4: CAC -->
+<div class="bg-surface-container-low p-8 rounded-2xl flex flex-col justify-between">
+<div>
+<h2 class="font-headline text-xl font-bold text-on-surface mb-2">Conhecimento de CAC</h2>
+<p class="text-sm text-on-secondary-container mb-6">Custo de Aquisição de Cliente</p>
+</div>
+<select class="w-full p-4 rounded-xl bg-surface-container-lowest border-none ring-0 focus:ring-2 focus:ring-primary/20 font-medium">
+<option disabled="" selected="" value="">Selecione uma opção</option>
+<option>Sim</option>
+<option>Não</option>
+<option>Aproximado</option>
+</select>
+</div>
+<!-- Question 5: Instagram Communication -->
+<div class="bg-primary p-8 rounded-2xl flex flex-col justify-between text-on-primary">
+<div>
+<h2 class="font-headline text-xl font-bold mb-2">Comunicação Instagram</h2>
+<p class="text-sm text-on-primary-container mb-6">Como você avalia seu posicionamento?</p>
+</div>
+<select class="w-full p-4 rounded-xl bg-primary-container border-none ring-0 focus:ring-2 focus:ring-tertiary-fixed-dim/30 font-medium text-white">
+<option disabled="" selected="" value="">Selecione o perfil</option>
+<option>Institucional</option>
+<option>Comercial</option>
+<option>Misto</option>
+<option>Não uso</option>
+</select>
+</div>
+</section>
+</div>
+<!-- Action Bar -->
+<footer class="mt-24 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-outline-variant/15 pt-12">
+<button class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-on-surface hover:bg-surface-container-high transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl" data-icon="arrow_back">arrow_back</span>
+                Voltar
+            </button>
+<button class="w-full sm:w-auto px-12 py-4 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold shadow-xl shadow-primary/20 hover:scale-105 transition-transform flex items-center justify-center gap-2">
+                Próximo
+                <span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</footer>
+</main>
+<!-- Side Navigation (Shared Component - Hidden on focused diagnostic steps per Filter Rule) -->
+<!-- Rule check: Task-focused sub-page should suppress side nav to prioritize content canvas -->
+<!-- Mobile Navigation Shell (Filtered out for focused task) -->
+</body></html>

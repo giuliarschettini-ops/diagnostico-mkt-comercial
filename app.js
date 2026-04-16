@@ -149,7 +149,8 @@ async function submitDiagnosis() {
   overlay.classList.add('active');
   updateStatusCards(0);
 
-  const prompt = buildPrompt();
+  const metrics = calculateGrowthMetrics();
+  const prompt = buildPrompt(metrics);
 
   try {
     // Status: collecting
@@ -191,7 +192,46 @@ async function submitDiagnosis() {
   }
 }
 
-function buildPrompt() {
+function calculateGrowthMetrics() {
+  const d = diagnosisData;
+  const arrPassado = parseFloat(String(d.arr_ultimo_ano || '0').replace(/\./g, '').replace(',', '.')) || 0;
+  const arrMeta = parseFloat(String(d.arr_meta || '0').replace(/\./g, '').replace(',', '.')) || 0;
+  const ticket = parseFloat(String(d.ticket_medio || '0').replace(/\./g, '').replace(',', '.')) || 0;
+  const churnPct = parseFloat(String(d.churn_valor || '0').replace('%', '').replace(',', '.')) || 0;
+  const convPct = parseFloat(String(d.taxa_conversao || '0').replace('%', '').replace(',', '.')) || 3; // default 3% se não informado
+
+  const diffARR = arrMeta - arrPassado;
+  
+  // 1. Projeção de aumento ARR incremental (Fórmula 78)
+  const X = diffARR > 0 ? diffARR / 78 : 0;
+  
+  // 2. Vendas sem Churn
+  const vendasSemChurn = ticket > 0 ? X / ticket : 0;
+  
+  // 3. Vendas com Churn
+  const mrrAtual = arrPassado / 12;
+  const perdaMensalValor = mrrAtual * (churnPct / 100);
+  const vendasComChurn = ticket > 0 ? (X + perdaMensalValor) / ticket : 0;
+  
+  // 4. MQLs Necessários (Considerando a taxa de conversão de lead p/ venda)
+  const mqls = (convPct > 0) ? (vendasComChurn / (convPct / 100)) : 0;
+  
+  // 5. SQLs Necessários (Ratio 3:1 de MQL p/ SQL)
+  const sqls = mqls / 3;
+
+  return {
+    crescimento_mensal_X: X.toFixed(2),
+    vendas_sem_churn: Math.ceil(vendasSemChurn),
+    vendas_com_churn: Math.ceil(vendasComChurn),
+    mqls_necessarios: Math.ceil(mqls),
+    sqls_necessarios: Math.ceil(sqls),
+    diff_arr: diffARR.toFixed(2),
+    churn_base: churnPct.toFixed(2),
+    conv_base: convPct.toFixed(2)
+  };
+}
+
+function buildPrompt(m) {
   const d = diagnosisData;
   const canaisStr = (d.canais || []).join(', ') + (d.canal_outro_texto ? ` (Outro: ${d.canal_outro_texto})` : '');
   return `Você é um consultor sênior de operações comerciais e marketing, especialista no segmento de ${d.segmento || 'serviços'}. Analise as respostas abaixo de um diagnóstico comercial e gere um relatório estratégico.
@@ -228,14 +268,24 @@ BLOCO 3 — GESTÃO E DADOS:
 - Meta de ARR do ano atual: R$ ${d.arr_meta || 'Não informado'}
 - Base de decisão: ${d.base_decisao || 'Não informado'}
 
-BLOCO 4 — ANÁLISE DE OPERAÇÃO E ACOMPANHAMENTO:
-- Acompanha motivos de perda: ${d.acompanha_perda || 'Não informado'}
-- Decisão de campanhas é baseada em dados de perda: ${d.decisao_campanhas || 'Não informado'}
-- Realiza campanhas de reativação de inativos: ${d.reativacao_inativos || 'Não informado'}
-- Mapeia origens dos leads: ${d.mapeia_origens || 'Não informado'}
-- Sabe quais origens têm maior conversão: ${d.sabe_conversao_origem || 'Não informado'}
-- Investimento em MKT alinhado aos dados da operação: ${d.mkt_alinhado || 'Não informado'}
-- Processo de pós-venda/retenção: ${d.pos_venda || 'Não informado'}
+PROJEÇÕES MATEMÁTICAS CALCULADAS (Use estes números na sua análise):
+- Diferença de ARR Meta vs Atual: R$ ${m.diff_arr}
+- Crescimento mensal incremental necessário (X): R$ ${m.crescimento_mensal_X}
+- Vendas mensais necessárias (puro crescimento): ${m.vendas_sem_churn} vendas/mês
+- Vendas mensais necessárias (crescimento + reposição de churn de ${m.churn_base}%): ${m.vendas_com_churn} vendas/mês
+- Volume de MQLs/Leads necessários (baseado em conversão de ${m.conv_base}%): ${m.mqls_necessarios} leads/mês
+- Volume de SQLs (Oportunidades Qualificadas) necessários: ${m.sqls_necessarios} SQLs/mês
+
+INSTRUÇÕES PARA O RELATÓRIO:
+1. Use uma linguagem executiva, técnica e inspiradora.
+2. Formate usando Markdown com títulos elegantes.
+3. Use os números das "PROJEÇÕES MATEMÁTICAS CALCULADAS" para dar embasamento ao Plano de Ação.
+4. Estruture em: 
+   - Resumo Executivo
+   - Análise de Eficiência (Mkt e Vendas)
+   - Saúde Financeira e Projeções Financeiras (focando nos volumes de vendas necessários)
+   - Plano de Ação (Curto, Médio e Longo Prazo)
+5. Seja crítico: se o volume de leads necessário for muito discrepante do investimento atual, aponte a sub-alocação de recursos.
 
 RESPONDA OBRIGATORIAMENTE no seguinte formato JSON (sem markdown, sem backticks, APENAS o JSON puro):
 {

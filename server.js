@@ -1,18 +1,7 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-
-// Load .env manually (no dotenv dependency needed)
-try {
-  const envFile = fs.readFileSync(path.join(__dirname, '.env'), 'utf-8');
-  envFile.split('\n').forEach(line => {
-    const trimmed = line.trim();
-    if (trimmed && !trimmed.startsWith('#') && !trimmed.startsWith('//')) {
-      const [key, ...rest] = trimmed.split('=');
-      if (key && rest.length) process.env[key.trim()] = rest.join('=').trim();
-    }
-  });
-} catch (e) {}
 
 const app = express();
 const PORT = process.env.PORT || 3000;

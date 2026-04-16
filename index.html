@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diagnóstico de operação — Diagnóstico Comercial Inteligente</title>
+  <meta name="description" content="Analise sua operação comercial e de marketing e receba um plano de ação personalizado."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- Header -->
+<header class="app-header">
+  <div class="inner">
+    <div class="brand">Sovereign Consultant</div>
+    <span class="material-symbols-outlined" style="color:#1e3a8a;font-size:1.75rem">account_circle</span>
+  </div>
+</header>
+
+<!-- Progress Bar -->
+<div id="progress-wrap" class="progress-wrap" style="display:none">
+  <div class="progress-header">
+    <span class="progress-label">Progresso do Diagnóstico</span>
+    <span class="progress-pct" id="progress-pct">0%</span>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+</div>
+
+<!-- ==================== STEP 0: BOAS-VINDAS ==================== -->
+<section class="step active" data-step="0">
+  <div class="step-container" style="max-width:72rem">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center" class="hero-grid">
+      <!-- Left -->
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.25rem 0.75rem;border-radius:999px;background:rgba(0,74,49,0.08);color:var(--on-tertiary-container);font-size:0.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.5rem">
+          <span class="material-symbols-outlined" style="font-size:1rem">verified</span>
+          Institutional Grade Analysis
+        </div>
+        <h1 style="font-size:3rem;font-weight:800;color:var(--primary);line-height:1.1;letter-spacing:-0.02em;margin-bottom:1.5rem">
+          Diagnóstico Comercial Inteligente
+        </h1>
+        <p style="font-size:1.125rem;color:var(--on-secondary-container);line-height:1.6;max-width:28rem;margin-bottom:2rem">
+          Analise sua operação e receba um plano de ação personalizado baseado em métricas reais do mercado.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:1.5rem">
+          <div style="display:flex;align-items:flex-start;gap:1rem">
+            <div style="width:3rem;height:3rem;border-radius:0.75rem;background:var(--surface-container-highest);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <span class="material-symbols-outlined" style="color:var(--primary)">analytics</span>
+            </div>
+            <div>
+              <h4 style="font-weight:700;font-size:0.9375rem">Data-Driven Insights</h4>
+              <p style="font-size:0.8125rem;color:var(--on-secondary-container)">Decisões baseadas em dados consolidados de performance.</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1rem">
+            <div style="width:3rem;height:3rem;border-radius:0.75rem;background:var(--surface-container-highest);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <span class="material-symbols-outlined" style="color:var(--primary)">rocket_launch</span>
+            </div>
+            <div>
+              <h4 style="font-weight:700;font-size:0.9375rem">Growth Mapping</h4>
+              <p style="font-size:0.8125rem;color:var(--on-secondary-container)">Identificação clara de gargalos na jornada do cliente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Form -->
+      <div style="background:var(--surface-container-lowest);border-radius:1rem;padding:2.5rem;box-shadow:0 20px 40px rgba(13,28,47,0.06)">
+        <h2 style="font-size:1.5rem;font-weight:800;color:var(--primary);margin-bottom:0.5rem">Boas-vindas</h2>
+        <p style="font-size:0.875rem;color:var(--on-secondary-container);margin-bottom:2rem">Preencha os dados abaixo para iniciar.</p>
+        <div class="form-group">
+          <label class="form-label">Nome da empresa</label>
+          <input class="form-input" id="empresa" type="text" placeholder="Ex: Sovereign Industries"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nome do responsável</label>
+          <input class="form-input" id="responsavel" type="text" placeholder="Seu nome completo"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Telefone</label>
+          <input class="form-input" id="telefone" type="tel" placeholder="(11) 99999-9999"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">E-mail</label>
+          <input class="form-input" id="email" type="email" placeholder="seu@email.com"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Segmento de atuação</label>
+          <select class="form-select" id="segmento">
+            <option value="Proteção Veicular" selected>Proteção Veicular</option>
+            <option value="Tecnologia & Software">Tecnologia & Software</option>
+            <option value="Varejo & E-commerce">Varejo & E-commerce</option>
+            <option value="Serviços Profissionais">Serviços Profissionais</option>
+            <option value="Indústria & Manufatura">Indústria & Manufatura</option>
+            <option value="Saúde & Bem-estar">Saúde & Bem-estar</option>
+          </select>
+        </div>
+        <button class="btn-next" style="width:100%;justify-content:center;margin-top:0.5rem" onclick="nextStep()">
+          <span>Iniciar diagnóstico</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+        <p style="text-align:center;font-size:0.625rem;color:var(--outline);text-transform:uppercase;letter-spacing:0.15em;font-weight:700;margin-top:1rem">Tempo estimado: 5 minutos</p>
+      </div>
+    </div>
+  </div>
+  <style>@media(max-width:768px){.hero-grid{grid-template-columns:1fr!important;gap:2rem!important}}</style>
+</section>
+
+<!-- ==================== STEP 1: OPERAÇÃO COMERCIAL ==================== -->
+<section class="step" data-step="1">
+  <div class="step-container">
+    <h1 style="font-size:2rem;font-weight:800;color:var(--primary);margin-bottom:0.5rem">Bloco 1: Operação Comercial</h1>
+    <p style="color:var(--on-secondary-container);margin-bottom:2.5rem">Vamos entender sua estrutura comercial atual.</p>
+
+    <div class="q-card">
+      <label class="q-title" for="num-vendedores">Quantos vendedores você tem?</label>
+      <input class="form-input" id="num-vendedores" type="number" placeholder="Ex: 12" style="max-width:16rem"/>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem" class="q-row-2">
+      <div class="q-card">
+        <label class="q-title">Estrutura do Time</label>
+        <p class="q-subtitle">Seu time é interno, externo ou misto?</p>
+        <select class="form-select" id="estrutura-time">
+          <option disabled selected value="">Selecione</option>
+          <option value="Interno (Inside Sales)">Interno (Inside Sales)</option>
+          <option value="Externo (Field Sales)">Externo (Field Sales)</option>
+          <option value="Misto / Híbrido">Misto / Híbrido</option>
+        </select>
+      </div>
+      <div class="q-card">
+        <label class="q-title" for="ferramenta-crm">Qual CRM você utiliza?</label>
+        <input class="form-input" id="ferramenta-crm" type="text" placeholder="Ex: Power CRM, Salesforce, RD Station, Pipedrive..."/>
+      </div>
+    </div>
+    <style>@media(max-width:768px){.q-row-2{grid-template-columns:1fr!important}}</style>
+
+    <div class="q-card">
+      <label class="q-title">Os vendedores preenchem o CRM corretamente?</label>
+      <div id="crm-scale" class="scale-row" style="max-width:24rem;margin-top:1rem">
+        <span class="scale-label">Nunca</span>
+        <button type="button" class="scale-btn" data-value="1">1</button>
+        <button type="button" class="scale-btn" data-value="2">2</button>
+        <button type="button" class="scale-btn" data-value="3">3</button>
+        <button type="button" class="scale-btn" data-value="4">4</button>
+        <button type="button" class="scale-btn" data-value="5">5</button>
+        <span class="scale-label">Sempre</span>
+      </div>
+    </div>
+
+    <div class="q-card" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center">
+      <div>
+        <label class="q-title">Taxa de Conversão Estimada</label>
+        <p class="q-subtitle">Do Lead ao Fechamento (%)</p>
+      </div>
+      <div>
+        <div style="position:relative">
+          <input class="form-input" id="taxa-conversao" type="number" placeholder="00" style="text-align:right;padding-right:2.5rem;font-size:1.5rem;font-weight:700;color:var(--primary)"/>
+          <span style="position:absolute;right:1rem;top:50%;transform:translateY(-50%);font-size:1.25rem;font-weight:700;color:var(--on-secondary-container)">%</span>
+        </div>
+        <label style="display:flex;align-items:center;gap:0.5rem;margin-top:0.75rem;cursor:pointer;font-size:0.875rem">
+          <input type="checkbox" id="sem-taxa"/> Não tenho essa informação
+        </label>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title" for="problema-funil">Qual o maior problema do seu funil hoje?</label>
+      <textarea class="form-textarea" id="problema-funil" placeholder="Descreva os principais gargalos..."></textarea>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevStep()"><span class="material-symbols-outlined">arrow_back</span> Voltar</button>
+      <button class="btn-next" onclick="nextStep()">Próximo <span class="material-symbols-outlined">arrow_forward</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STEP 2: MARKETING E LEADS ==================== -->
+<section class="step" data-step="2">
+  <div class="step-container">
+    <h1 style="font-size:2rem;font-weight:800;color:var(--primary);margin-bottom:0.5rem">Bloco 2: Marketing e <span style="background:linear-gradient(135deg,var(--primary),var(--primary-container));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">Geração de Leads</span></h1>
+    <p style="color:var(--on-secondary-container);margin-bottom:2.5rem">Mapeando sua estratégia de aquisição.</p>
+
+    <div class="q-card">
+      <label class="q-title">Quais canais de aquisição você usa hoje?</label>
+      <p class="q-subtitle">Selecione todos os canais ativos.</p>
+      <div class="option-grid cols-3">
+        <label class="option-card option-card-icon"><input type="checkbox" name="canais" value="Instagram"/><div class="card-face"><span class="material-symbols-outlined">share</span><span>Instagram</span></div></label>
+        <label class="option-card option-card-icon"><input type="checkbox" name="canais" value="Campanha Externa"/><div class="card-face"><span class="material-symbols-outlined">campaign</span><span>Campanha Externa</span></div></label>
+        <label class="option-card option-card-icon"><input type="checkbox" name="canais" value="Indicação"/><div class="card-face"><span class="material-symbols-outlined">group_add</span><span>Indicação</span></div></label>
+        <label class="option-card option-card-icon"><input type="checkbox" name="canais" value="Site"/><div class="card-face"><span class="material-symbols-outlined">language</span><span>Site</span></div></label>
+        <label class="option-card option-card-icon"><input type="checkbox" name="canais" value="WhatsApp"/><div class="card-face"><span class="material-symbols-outlined">chat</span><span>WhatsApp</span></div></label>
+        <label class="option-card option-card-icon"><input type="checkbox" name="canais" value="Outro" id="canal-outro-check" onchange="document.getElementById('canal-outro-wrap').style.display=this.checked?'block':'none'"/><div class="card-face"><span class="material-symbols-outlined">more_horiz</span><span>Outro</span></div></label>
+      </div>
+      <div id="canal-outro-wrap" style="display:none;margin-top:1rem">
+        <label class="form-label">Qual outro canal?</label>
+        <input class="form-input" id="canal-outro-texto" type="text" placeholder="Descreva o canal..."/>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title">Você investe em tráfego pago?</label>
+      <div class="option-grid cols-2" style="max-width:20rem;margin-bottom:1.5rem">
+        <label class="option-card"><input type="radio" name="trafego_pago" value="Sim"/><div class="card-face">Sim</div></label>
+        <label class="option-card"><input type="radio" name="trafego_pago" value="Não"/><div class="card-face">Não</div></label>
+      </div>
+      <label class="form-label">Quanto por mês?</label>
+      <div style="position:relative;max-width:16rem">
+        <span style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--on-secondary-container);font-weight:500">R$</span>
+        <input class="form-input" id="investimento-mensal" type="number" placeholder="0,00" style="padding-left:3rem"/>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title" for="origem-leads">De onde vem a maioria dos seus leads?</label>
+      <textarea class="form-textarea" id="origem-leads" placeholder="Descreva as fontes que mais convertem..."></textarea>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem" class="q-row-2">
+      <div class="q-card">
+        <label class="q-title">Conhecimento de CAC</label>
+        <p class="q-subtitle">Custo de Aquisição de Cliente</p>
+        <select class="form-select" id="conhece-cac" onchange="document.getElementById('cac-valor-wrap').style.display=(this.value==='Sim'||this.value==='Aproximado')?'block':'none'">
+          <option disabled selected value="">Selecione</option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+          <option value="Aproximado">Aproximado</option>
+        </select>
+        <div id="cac-valor-wrap" style="display:none;margin-top:1rem">
+          <label class="form-label">Qual é o seu CAC?</label>
+          <div style="position:relative;max-width:14rem">
+            <span style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--on-secondary-container);font-weight:500">R$</span>
+            <input class="form-input" id="cac-valor" type="number" placeholder="0,00" style="padding-left:3rem"/>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <label class="q-title">Conhecimento de CPL</label>
+        <p class="q-subtitle">Custo por Lead</p>
+        <select class="form-select" id="conhece-cpl" onchange="document.getElementById('cpl-valor-wrap').style.display=(this.value==='Sim'||this.value==='Aproximado')?'block':'none'">
+          <option disabled selected value="">Selecione</option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+          <option value="Aproximado">Aproximado</option>
+        </select>
+        <div id="cpl-valor-wrap" style="display:none;margin-top:1rem">
+          <label class="form-label">Qual é o seu CPL?</label>
+          <div style="position:relative;max-width:14rem">
+            <span style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--on-secondary-container);font-weight:500">R$</span>
+            <input class="form-input" id="cpl-valor" type="number" placeholder="0,00" style="padding-left:3rem"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card" style="background:var(--primary);color:white;border-radius:1rem">
+      <label class="q-title" style="color:white">Comunicação Instagram</label>
+      <p class="q-subtitle" style="color:var(--on-primary-container)">Como você avalia seu posicionamento?</p>
+      <select class="form-select" id="comunicacao-instagram" style="background:var(--primary-container);color:white;border-color:transparent">
+        <option disabled selected value="">Selecione o perfil</option>
+        <option value="Institucional">Institucional</option>
+        <option value="Comercial">Comercial</option>
+        <option value="Misto">Misto</option>
+        <option value="Não uso">Não uso</option>
+      </select>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevStep()"><span class="material-symbols-outlined">arrow_back</span> Voltar</button>
+      <button class="btn-next" onclick="nextStep()">Próximo <span class="material-symbols-outlined">arrow_forward</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STEP 3: GESTÃO E DADOS ==================== -->
+<section class="step" data-step="3">
+  <div class="step-container">
+    <h1 style="font-size:2rem;font-weight:800;color:var(--on-surface);margin-bottom:0.5rem">Bloco 3: <span style="color:var(--primary-container)">Gestão e Dados</span></h1>
+    <p style="color:var(--on-secondary-container);margin-bottom:2.5rem">Transforme intuição em indicadores estratégicos.</p>
+
+    <div class="q-card">
+      <label class="q-title">Você tem metas mensais definidas?</label>
+      <div class="option-grid cols-2" style="max-width:20rem">
+        <label class="option-card"><input type="radio" name="metas" value="Sim" onchange="document.getElementById('metas-desc-wrap').style.display='block'"/><div class="card-face"><span class="material-symbols-outlined" style="color:var(--primary)">check_circle</span> Sim</div></label>
+        <label class="option-card"><input type="radio" name="metas" value="Não" onchange="document.getElementById('metas-desc-wrap').style.display='none'"/><div class="card-face"><span class="material-symbols-outlined" style="color:var(--outline)">cancel</span> Não</div></label>
+      </div>
+      <div id="metas-desc-wrap" style="display:none;margin-top:1.5rem">
+        <label class="form-label">Como essas metas são estruturadas?</label>
+        <textarea class="form-textarea" id="metas-descricao" placeholder="Ex: Metas individuais por vendedor, meta de receita mensal, meta de novos clientes..."></textarea>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title">Você acompanha os resultados semanalmente?</label>
+      <select class="form-select" id="acompanha-semanal" style="max-width:20rem">
+        <option disabled selected value="">Selecione</option>
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+        <option value="Às vezes">Às vezes</option>
+      </select>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem" class="q-row-2">
+      <div class="q-card" style="background:var(--surface-container-highest)">
+        <label class="q-title">Você sabe seu MRR ou faturamento recorrente?</label>
+        <div class="option-grid cols-2" style="margin-top:1rem">
+          <label class="option-card"><input type="radio" name="mrr" value="Sim" onchange="document.getElementById('mrr-valor-wrap').style.display='block'"/><div class="card-face">SIM</div></label>
+          <label class="option-card"><input type="radio" name="mrr" value="Não" onchange="document.getElementById('mrr-valor-wrap').style.display='none'"/><div class="card-face">NÃO</div></label>
+        </div>
+        <div id="mrr-valor-wrap" style="display:none;margin-top:1rem">
+          <label class="form-label">Qual é o seu MRR?</label>
+          <div style="position:relative;max-width:16rem">
+            <span style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--on-secondary-container);font-weight:500">R$</span>
+            <input class="form-input" id="mrr-valor" type="number" placeholder="0,00" style="padding-left:3rem"/>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" style="background:var(--surface-container-highest)">
+        <label class="q-title">Você conhece seu churn médio mensal?</label>
+        <div class="option-grid cols-2" style="margin-top:1rem">
+          <label class="option-card"><input type="radio" name="churn" value="Sim" onchange="document.getElementById('churn-valor-wrap').style.display='block'"/><div class="card-face">SIM</div></label>
+          <label class="option-card"><input type="radio" name="churn" value="Não" onchange="document.getElementById('churn-valor-wrap').style.display='none'"/><div class="card-face">NÃO</div></label>
+        </div>
+        <div id="churn-valor-wrap" style="display:none;margin-top:1rem">
+          <label class="form-label">Qual é o churn médio mensal?</label>
+          <input class="form-input" id="churn-valor" type="text" placeholder="Ex: 3% ou 15 clientes/mês"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title" for="ticket-medio">Qual seu ticket médio?</label>
+      <div style="position:relative;max-width:16rem">
+        <span style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--on-secondary-container);font-weight:500">R$</span>
+        <input class="form-input" id="ticket-medio" type="number" placeholder="0,00" style="padding-left:3rem"/>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem" class="q-row-2">
+      <div class="q-card">
+        <label class="q-title" for="arr-ultimo-ano">ARR do último ano</label>
+        <p class="q-subtitle">Receita Recorrente Anual realizada</p>
+        <div style="position:relative;max-width:16rem">
+          <span style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--on-secondary-container);font-weight:500">R$</span>
+          <input class="form-input" id="arr-ultimo-ano" type="number" placeholder="0,00" style="padding-left:3rem"/>
+        </div>
+      </div>
+      <div class="q-card">
+        <label class="q-title" for="arr-meta">Meta de ARR do ano atual</label>
+        <p class="q-subtitle">Receita Recorrente Anual projetada</p>
+        <div style="position:relative;max-width:16rem">
+          <span style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--on-secondary-container);font-weight:500">R$</span>
+          <input class="form-input" id="arr-meta" type="number" placeholder="0,00" style="padding-left:3rem"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title">Como você toma decisões comerciais hoje?</label>
+      <div class="option-grid cols-3">
+        <label class="option-card option-card-icon"><input type="radio" name="decisao" value="Intuição"/><div class="card-face"><span class="material-symbols-outlined">psychology</span><span>Intuição</span><small style="color:var(--on-secondary-container);font-weight:400">Feeling e experiência</small></div></label>
+        <label class="option-card option-card-icon"><input type="radio" name="decisao" value="Dados"/><div class="card-face"><span class="material-symbols-outlined">monitoring</span><span>Dados</span><small style="color:var(--on-secondary-container);font-weight:400">Relatórios e dashboards</small></div></label>
+        <label class="option-card option-card-icon"><input type="radio" name="decisao" value="Misto"/><div class="card-face"><span class="material-symbols-outlined">balance</span><span>Misto</span><small style="color:var(--on-secondary-container);font-weight:400">Técnica + visão humana</small></div></label>
+      </div>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevStep()"><span class="material-symbols-outlined">arrow_back</span> Voltar</button>
+      <button class="btn-next" onclick="nextStep()">Próximo <span class="material-symbols-outlined">arrow_forward</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STEP 4: ANÁLISE DE OPERAÇÃO E ACOMPANHAMENTO ==================== -->
+<section class="step" data-step="4">
+  <div class="step-container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem">
+      <div>
+        <span style="font-size:0.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--on-secondary-container)">Passo Final</span>
+        <h1 style="font-size:2rem;font-weight:800;color:var(--primary);margin-top:0.25rem">Bloco 4: Análise de Operação e Acompanhamento</h1>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title">Você acompanha os motivos de perda?</label>
+      <div class="option-grid cols-3" style="max-width:28rem">
+        <label class="option-card"><input type="radio" name="acompanha_perda" value="Sim"/><div class="card-face">Sim</div></label>
+        <label class="option-card"><input type="radio" name="acompanha_perda" value="Não"/><div class="card-face">Não</div></label>
+        <label class="option-card"><input type="radio" name="acompanha_perda" value="Parcialmente"/><div class="card-face">Parcialmente</div></label>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title">Sua tomada de decisão de campanhas a serem criadas é baseada nessas informações?</label>
+      <div class="option-grid cols-3" style="max-width:28rem">
+        <label class="option-card"><input type="radio" name="decisao_campanhas" value="Sim"/><div class="card-face">Sim</div></label>
+        <label class="option-card"><input type="radio" name="decisao_campanhas" value="Não"/><div class="card-face">Não</div></label>
+        <label class="option-card"><input type="radio" name="decisao_campanhas" value="Parcialmente"/><div class="card-face">Parcialmente</div></label>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title">Você realiza campanhas de reativação de inativos?</label>
+      <div class="option-grid cols-3" style="max-width:28rem">
+        <label class="option-card"><input type="radio" name="reativacao_inativos" value="Sim"/><div class="card-face">Sim</div></label>
+        <label class="option-card"><input type="radio" name="reativacao_inativos" value="Não"/><div class="card-face">Não</div></label>
+        <label class="option-card"><input type="radio" name="reativacao_inativos" value="Às vezes"/><div class="card-face">Às vezes</div></label>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title">Você mapeia hoje as origens dos seus leads?</label>
+      <div class="option-grid cols-2" style="max-width:20rem">
+        <label class="option-card"><input type="radio" name="mapeia_origens" value="Sim"/><div class="card-face"><span class="material-symbols-outlined" style="color:var(--primary)">check_circle</span> Sim</div></label>
+        <label class="option-card"><input type="radio" name="mapeia_origens" value="Não"/><div class="card-face"><span class="material-symbols-outlined" style="color:var(--outline)">cancel</span> Não</div></label>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title">Você sabe quais origens de lead possuem taxas de conversão mais altas?</label>
+      <div class="option-grid cols-2" style="max-width:20rem">
+        <label class="option-card"><input type="radio" name="sabe_conversao_origem" value="Sim"/><div class="card-face"><span class="material-symbols-outlined" style="color:var(--primary)">check_circle</span> Sim</div></label>
+        <label class="option-card"><input type="radio" name="sabe_conversao_origem" value="Não"/><div class="card-face"><span class="material-symbols-outlined" style="color:var(--outline)">cancel</span> Não</div></label>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title">Seu investimento em marketing está alinhado aos dados sobre resultados da sua operação?</label>
+      <div class="option-grid cols-3" style="max-width:28rem">
+        <label class="option-card"><input type="radio" name="mkt_alinhado" value="Sim"/><div class="card-face">Sim</div></label>
+        <label class="option-card"><input type="radio" name="mkt_alinhado" value="Não"/><div class="card-face">Não</div></label>
+        <label class="option-card"><input type="radio" name="mkt_alinhado" value="Parcialmente"/><div class="card-face">Parcialmente</div></label>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <label class="q-title">Você tem um processo de pós-venda ou retenção na sua operação?</label>
+      <div class="option-grid cols-3" style="max-width:28rem">
+        <label class="option-card"><input type="radio" name="pos_venda" value="Sim"/><div class="card-face">Sim</div></label>
+        <label class="option-card"><input type="radio" name="pos_venda" value="Não"/><div class="card-face">Não</div></label>
+        <label class="option-card"><input type="radio" name="pos_venda" value="Informal"/><div class="card-face">Informal</div></label>
+      </div>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevStep()"><span class="material-symbols-outlined">arrow_back</span> Voltar</button>
+      <button class="btn-next" onclick="nextStep()">
+        Finalizar Diagnóstico
+        <span class="material-symbols-outlined">check_circle</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STEP 5: RESULTADO ==================== -->
+<section class="step" data-step="5">
+  <div class="step-container" style="max-width:72rem">
+    <div class="result-header">
+      <p class="tag">Relatório Institucional</p>
+      <h1>Diagnóstico Final: <span id="result-empresa"></span></h1>
+      <p class="subtitle">Análise estratégica de maturidade operacional, comercial e de marketing.</p>
+    </div>
+
+    <div class="result-grid">
+      <!-- Left: Score + Summary -->
+      <div>
+        <div class="score-card">
+          <h3 style="font-size:0.8125rem;font-weight:700;color:var(--on-secondary-container);margin-bottom:1.5rem">Operations Score</h3>
+          <div class="score-ring">
+            <svg viewBox="0 0 192 192">
+              <circle class="track" cx="96" cy="96" r="88"/>
+              <circle class="fill-ring" id="result-ring-fill" cx="96" cy="96" r="88" stroke-dasharray="552.92" stroke-dashoffset="552.92"/>
+            </svg>
+            <div class="score-value">
+              <span class="num" id="result-score-num">0</span>
+              <span class="label" id="result-score-label">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-section" style="margin-top:2rem">
+          <h3><span class="material-symbols-outlined">description</span> Resumo Executivo</h3>
+          <div class="executive-summary" id="result-resumo"></div>
+        </div>
+      </div>
+
+      <!-- Right: Gargalos + Quick Wins -->
+      <div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem" class="q-row-2">
+          <div class="result-section bottlenecks">
+            <h3><span class="material-symbols-outlined" style="color:var(--error)">warning</span> Gargalos</h3>
+            <div id="result-gargalos"></div>
+          </div>
+          <div class="result-section quickwins">
+            <h3><span class="material-symbols-outlined" style="color:var(--on-tertiary-container)">bolt</span> Quick Wins</h3>
+            <div id="result-quickwins"></div>
+          </div>
+        </div>
+
+        <div class="priorities-section">
+          <h3>Prioridades Recomendadas por Impacto</h3>
+          <div id="result-prioridades"></div>
+        </div>
+
+        <div class="cta-bar">
+          <div>
+            <h3>Pronto para o próximo nível?</h3>
+            <p>Nossos especialistas estão prontos para ajudar na implementação.</p>
+          </div>
+          <a class="btn-whatsapp" href="https://wa.me/5511999999999?text=Olá! Fiz o diagnóstico e quero evoluir minha operação." target="_blank">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.284l-.539 2.016 2.049-.545c.961.564 1.83.896 3.238.897 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.767-5.766zm3.385 8.163c-.145.411-.735.753-1.015.798-.27.045-.583.078-.97-.045a4.704 4.704 0 0 1-1.92-1.127 5.176 5.176 0 0 1-1.306-1.78c-.287-.565-.584-1.31-.584-1.99 0-.68.358-1.011.488-1.144.13-.133.286-.166.38-.166s.188.005.27.01c.086.005.201-.033.315.242.115.275.394 1.006.429 1.077s.058.151.01.247c-.048.096-.072.156-.145.242-.073.086-.153.192-.218.261s-.144.145-.062.286c.081.141.36.593.774.96.533.474.985.621 1.125.69.14.07.223.058.305-.037.083-.095.352-.411.446-.551.095-.14.188-.117.318-.069s.823.388.966.459c.142.07.237.104.272.165.035.061.035.353-.11.764z"/></svg>
+            Quero evoluir
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROCESSING OVERLAY ==================== -->
+<div id="processing-overlay" class="processing-overlay">
+  <div class="spinner-wrap">
+    <div class="spinner-track"></div>
+    <div class="spinner-fill"></div>
+    <div class="spinner-icon"><div><span class="material-symbols-outlined">analytics</span></div></div>
+  </div>
+  <h1 class="processing-title">Analisando sua operação...</h1>
+  <p class="processing-sub">Nosso motor de inteligência está processando suas respostas para gerar um diagnóstico estratégico.</p>
+  <div class="status-cards">
+    <div class="status-card done">
+      <span class="material-symbols-outlined">check_circle</span>
+      <div><p class="sc-title">Dados Coletados</p><p class="sc-sub">Informações processadas</p></div>
+    </div>
+    <div class="status-card active">
+      <span class="material-symbols-outlined" style="animation:pulse 1.5s infinite">insights</span>
+      <div><p class="sc-title">Benchmark Setorial</p><p class="sc-sub">Cruzando referências</p></div>
+    </div>
+    <div class="status-card pending">
+      <span class="material-symbols-outlined">description</span>
+      <div><p class="sc-title">Relatório Final</p><p class="sc-sub">Gerando insights</p></div>
+    </div>
+  </div>
+  <style>@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}</style>
+</div>
+
+<!-- Background decorations -->
+<div style="position:fixed;top:-10%;right:-5%;width:500px;height:500px;border-radius:50%;background:var(--surface-container-high);filter:blur(120px);opacity:0.3;pointer-events:none;z-index:-1"></div>
+<div style="position:fixed;bottom:-10%;left:-5%;width:400px;height:400px;border-radius:50%;background:var(--surface-container);filter:blur(100px);opacity:0.3;pointer-events:none;z-index:-1"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

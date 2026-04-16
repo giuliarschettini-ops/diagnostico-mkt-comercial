@@ -1,0 +1,13 @@
+{
+  "name": "diagnostico-mkt-comercial",
+  "version": "1.0.0",
+  "description": "Diagnóstico Comercial Inteligente — Sovereign Consultant",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

@@ -181,7 +181,7 @@ async function submitDiagnosis() {
     await sleep(600);
 
     const parsed = parseResult(text);
-    renderResult(parsed);
+    renderResult(parsed, metrics);
     hideOverlay();
     showStep(5);
 
@@ -330,8 +330,36 @@ function parseResult(text) {
   }
 }
 
-function renderResult(r) {
+function renderResult(r, m) {
   const empresa = diagnosisData.empresa || 'Sua Empresa';
+
+  // Render Projections Cards
+  const projectionsWrap = document.getElementById('result-projections');
+  if (projectionsWrap && m) {
+    const formatter = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+    projectionsWrap.innerHTML = `
+      <div class="projection-card">
+        <label class="p-label">Crescimento Mensal (X)</label>
+        <div class="p-value">${formatter.format(m.crescimento_mensal_X).replace('R$', '').trim()}</div>
+        <p class="p-sub">Incremental de ARR</p>
+      </div>
+      <div class="projection-card">
+        <label class="p-label">Vendas Mensais</label>
+        <div class="p-value">${m.vendas_com_churn}</div>
+        <p class="p-sub">Necessárias p/ meta</p>
+      </div>
+      <div class="projection-card">
+        <label class="p-label">MQLs (Leads)</label>
+        <div class="p-value">${m.mqls_necessarios}</div>
+        <p class="p-sub">Volume mensal alvo</p>
+      </div>
+      <div class="projection-card">
+        <label class="p-label">SQLs (Oportunidades)</label>
+        <div class="p-value">${m.sqls_necessarios}</div>
+        <p class="p-sub">Volume qualificado</p>
+      </div>
+    `;
+  }
 
   // Score ring
   const circumference = 2 * Math.PI * 88;
@@ -345,7 +373,7 @@ function renderResult(r) {
   document.getElementById('result-empresa').textContent = empresa;
 
   // Executive summary
-  document.getElementById('result-resumo').innerHTML = r.resumo_executivo.split('\n').filter(p=>p.trim()).map(p => `<p style="margin-bottom:1rem">${p}</p>`).join('');
+  document.getElementById('result-resumo').innerHTML = (r.resumo_executivo || '').split('\n').filter(p=>p.trim()).map(p => `<p style="margin-bottom:1rem">${p}</p>`).join('');
 
   // Bottlenecks
   const gHTML = (r.gargalos || []).map(g => `

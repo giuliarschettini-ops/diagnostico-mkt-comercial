@@ -217,6 +217,63 @@ h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
 .score-value .num { font-family: 'Manrope'; font-size: 3rem; font-weight: 900; color: var(--primary); }
 .score-value .label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; color: var(--on-secondary-container); }
 
+/* Projections Section */
+.result-projections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.projection-card {
+  background: var(--primary-container);
+  border: 1px solid var(--outline);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.projection-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, transparent 80%, var(--secondary) 200%);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.projection-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  border-color: var(--secondary);
+}
+
+.projection-card .p-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--on-secondary-container);
+}
+
+.projection-card .p-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+.projection-card .p-sub {
+  font-size: 0.8125rem;
+  color: var(--on-primary-container);
+  opacity: 0.8;
+}
+
 .result-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
 .result-section { background: var(--surface-container-lowest); border-radius: 1rem; padding: 2rem; }
 .result-section h3 { font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
